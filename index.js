@@ -62,3 +62,92 @@ function mult(n1,n2){
 }
 var res=mult(10,23)
 console.log(res)
+
+
+/*
+  SOME QUESTIONS
+*/ 
+
+function greeting (name){
+    if(name===undefined){
+        return"hi"
+    }
+    else{
+        return "hello"+name
+    }
+}
+console.log(greeting())
+console.log(greeting("yehia"))
+
+function maxOfThree(n1,n2,n3){
+    return Math.max(n1,n2,n3)// ofcourse iam lazy 
+}
+console.log(maxOfThree(1,2,3))
+
+function lastChar(s1,s2){
+    if(s1[s1.length-1]===s2[s2.length-1]){
+        return true
+    }else{
+        return false
+    }
+}
+console.log(lastChar("yehia","mohamed"))
+
+
+function onlyOdds(num){
+    let sum=0
+    for(let i=1;i<num;i+=2){
+        sum+=i
+    }
+    return sum
+}
+console.log(onlyOdds(6))
+
+function evenArray(array){
+    let evenArray=[]
+    for(var i =0;i<array.length;i++){
+        if(array[i]%2===0){
+            evenArray.push(array[i])
+        }
+        if(evenArray.length===2){
+            break;
+        }
+    }
+    return evenArray
+}
+console.log(evenArray([1,2,3,4,5,6,7]))
+
+var student={
+    id:1,
+    userName:"yehia",
+    phoneNumber:"01097141530",
+    cousres:["nodejs","flutter","html"]
+}
+console.log(student)
+console.log(student["id"]) // two similar ways for accessing value key of the object
+console.log(student.id)
+
+delete student.phoneNumber // deleting key 
+console.log(student)
+
+
+student.addreess="EGY" // adding new key 
+console.log(student)
+
+for(key in student){
+    console.log(key+" : "+student[key])// attention 
+}
+
+var employee={
+    id:2,
+    userName:"yousf",
+    responsibilties:function (){
+        console.log(this.userName +": manager , developer")
+    },
+    calculateSalary: function (hours,hourRate) {
+        return hourRate*hours
+    }
+}
+console.log(employee.responsibilties)
+let employeeWage=employee.calculateSalary(5,5)
+console.log(employeeWage)
